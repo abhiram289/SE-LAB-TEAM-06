@@ -1,6 +1,6 @@
 # SE Lab Submissions - Team-06
 
-This repository contains the work, assignments, lab exercises, and project deliverables for **SE Lab Team 03**.
+This repository contains the work, assignments, lab exercises, and project deliverables for **SE Lab Team 06**.
 
 
 
