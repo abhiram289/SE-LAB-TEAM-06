@@ -1,0 +1,31 @@
+{
+    "orders": {
+        "1": {
+            "customer": "Asha",
+            "items": [
+                "pizza",
+                "coke"
+            ],
+            "total": 290,
+            "status": "delivered"
+        },
+        "2": {
+            "customer": "Ravi",
+            "items": [
+                "burger",
+                "fries"
+            ],
+            "total": 240,
+            "status": "out_for_delivery"
+        },
+        "3": {
+            "customer": "Meera",
+            "items": [
+                "burger"
+            ],
+            "total": 150,
+            "status": "delivered"
+        }
+    },
+    "next_id": 4
+}
