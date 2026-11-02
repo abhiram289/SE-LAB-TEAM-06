@@ -1,10 +1,8 @@
 """Energy consumption and utility tariff tracking system.
-
 This module records utility meter readings, computes tiered electricity
 bills, flags meters with unusually high usage spikes, and persists readings
 to a JSON storage file.
 """
-
 import ast
 import json
 import operator
@@ -83,7 +81,6 @@ def compute_bill(meter_id, tier_rates):
 
 def raise_rates(percent):
     """Increase all rate tiers by a specified percentage."""
-    # pylint: disable=global-statement
     global RATE_TIER_1, RATE_TIER_2, RATE_TIER_3
     RATE_TIER_1 = RATE_TIER_1 * (1 + percent / 100)
     RATE_TIER_2 = RATE_TIER_2 * (1 + percent / 100)
@@ -101,7 +98,6 @@ def flag_spikes():
 
 def load_meter_data(file="meters.json"):
     """Load meter consumption data from a JSON file into state."""
-    # pylint: disable=global-statement
     global meters
     try:
         with open(file, "r", encoding="utf-8") as f:
