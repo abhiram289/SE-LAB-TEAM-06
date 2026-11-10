@@ -1,0 +1,27 @@
+============================= CODE COVERAGE REPORT (>90% TARGET) =============================
+Student Name: K R Manoj
+SRN: PES1UG24AM125
+Test Suite: CodeCoverageTest_PES1UG24AM125_coffee_shop_order.py
+Command: coverage run -m pytest CodeCoverageTest_PES1UG24AM125_coffee_shop_order.py
+         coverage report -m
+
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-9.2.0, pluggy-1.7.0
+rootdir: C:\PESU\5TH SEM\Software engg\Lab-06\L6_L7_03_coffee_shop_order\Lab 6
+collected 13 items
+
+CodeCoverageTest_PES1UG24AM125_coffee_shop_order.py .............        [100%]
+
+============================= 13 passed in 1.16s ==============================
+Name                                                  Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------------------------
+CodeCoverageTest_PES1UG24AM125_coffee_shop_order.py      58      0   100%
+coffee_shop_order.py                                     54      0   100%
+-----------------------------------------------------------------------------------
+TOTAL                                                   112      0   100%
+
+Summary:
+- Total Statements Executed: 54 / 54
+- Statement/Line Coverage Achieved: 100% (Target: >=90%)
+- Missing Lines: None
+
