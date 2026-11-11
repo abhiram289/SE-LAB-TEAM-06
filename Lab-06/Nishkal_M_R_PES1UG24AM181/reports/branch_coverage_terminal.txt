@@ -1,0 +1,12 @@
+Lab 06 - Branch Coverage
+Name: Nishkal M R | SRN: PES1UG24AM181
+
+> python -m coverage run --branch --source=museum_admission -m pytest -q BranchCoverageTest_museum_admission_application.py
+....................                                                     [100%]
+20 passed in 0.32s
+> python -m coverage report -m
+Name                  Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------
+museum_admission.py      36      0     28      0   100%
+-----------------------------------------------------------------
+TOTAL                    36      0     28      0   100%
