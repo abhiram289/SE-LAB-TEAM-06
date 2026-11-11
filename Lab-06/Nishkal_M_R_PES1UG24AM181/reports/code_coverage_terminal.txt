@@ -1,0 +1,12 @@
+Lab 06 - Code Coverage
+Name: Nishkal M R | SRN: PES1UG24AM181
+
+> python -m coverage run --source=museum_admission -m pytest -q CodeCoverageTest_museum_admission_application.py
+....                                                                     [100%]
+4 passed in 0.09s
+> python -m coverage report -m
+Name                  Stmts   Miss  Cover   Missing
+---------------------------------------------------
+museum_admission.py      36      0   100%
+---------------------------------------------------
+TOTAL                    36      0   100%
