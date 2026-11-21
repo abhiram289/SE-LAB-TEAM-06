@@ -50,8 +50,7 @@ K_Ravish_Rao_PES1UG24AM127/
 │   ├── screenshot_step5_fixed_processor.png                    # Step 5: Hardened run & edge cases
 │   └── screenshot_step6_passing_fuzz_tests.png                 # Step 6: 3/3 Passing fuzz tests
 │
-├── PES1UG24AM127_K_Ravish_Rao_Lab07_Report.pdf                 # Comprehensive 6-page laboratory report
-├── Lab07_FuzzTesting_Report_PES1UG24AM127.pdf                  # Standardized lab report alias
+├── Lab07_FuzzTesting_Report_PES1UG24AM127.pdf                  # Comprehensive Lab 7 PDF report
 └── README.md                                                   # Documentation
 ```
 
