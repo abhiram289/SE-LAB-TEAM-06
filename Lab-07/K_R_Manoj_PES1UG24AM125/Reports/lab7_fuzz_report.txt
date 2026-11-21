@@ -1,0 +1,23 @@
+============================= LAB 7 HYPOTHESIS FUZZ TESTING REPORT =============================
+Student Name: K R Manoj
+SRN: PES1UG24AM125
+Course: Software Engineering (UE22CS351 / UE24CS351) - 5th Semester
+Module Under Test: processor.py
+Test Suite: test_processor.py
+Command: pytest test_processor.py
+
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-9.2.0, pluggy-1.7.0
+rootdir: C:\PESU\5TH SEM\Software engg\Lab-06\L6_L7_03_coffee_shop_order\Lab 7
+plugins: anyio-4.10.0, hypothesis-6.170.15, jaxtyping-0.3.11, langsmith-0.14.17, locust-2.47.0, typeguard-4.5.2
+collected 3 items
+
+test_processor.py ...                                                    [100%]
+
+============================== 3 passed in 1.45s ==============================
+
+Summary:
+- Property-based fuzz tests completed with Hypothesis (generating random strings, unicode, empty strings, None).
+- Hardened processor.py against all input anomalies, missing keys, type mismatches, and mathematical zero division.
+- Handled all edge cases safely without unhandled crashes.
+- All 3 property tests passed successfully.

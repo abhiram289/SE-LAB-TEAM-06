@@ -1,0 +1,29 @@
+================================================================================
+LAB 7 - STEP 5: HARDENED APPLICATION RUN & ROBUSTNESS VALIDATION
+================================================================================
+Student Name: K R Manoj
+SRN: PES1UG24AM125
+Module Under Test: processor.py (Defensively Hardened Code)
+Command: python processor.py
+
+TERMINAL EXECUTION LOG:
+PS C:\PESU\5TH SEM\Software engg\Lab-06\L6_L7_03_coffee_shop_order\Lab 7> python processor.py
+==== Running lookup_drink_code ====
+Enter drink code prefix (e.g. LAT, CAP, ESP): MOC
+Base Price: $ 5.0
+
+==== Running calculate_average_shot_cost ====
+Enter CSV of shot prices (e.g. 1.0, 1.5, 2.0): 1.0, 1.5, 2.0
+Average Shot Price: $ 1.5
+
+==== Running parse_order_modifiers ====
+Enter modifiers (e.g. milk:oat;syrup:vanilla): milk:oat;syrup:vanilla
+Parsed Modifiers: {'milk': 'oat', 'syrup': 'vanilla'}
+
+EDGE-CASE TOLERANCE VERIFICATION:
+1. lookup_drink_code("XYZ"): Returns None gracefully without KeyError.
+2. lookup_drink_code(None): Returns None safely without AttributeError.
+3. calculate_average_shot_cost(""): Returns 0.0 without ZeroDivisionError or ValueError.
+4. calculate_average_shot_cost("1.0,,bad_data,2.0"): Filters invalid tokens and calculates average (1.5).
+5. parse_order_modifiers(""): Returns {} safely without unpacking crash.
+6. parse_order_modifiers("milk:oat;no_colon_item;flavor:hazelnut;"): Correctly parses valid pairs {'milk': 'oat', 'flavor': 'hazelnut'} and ignores malformed/empty tokens.

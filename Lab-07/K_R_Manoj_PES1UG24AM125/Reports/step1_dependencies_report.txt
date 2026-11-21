@@ -1,0 +1,28 @@
+================================================================================
+LAB 7 - STEP 1: DEPENDENCY INSTALLATION AND ENVIRONMENT VERIFICATION
+================================================================================
+Student Name: K R Manoj
+SRN: PES1UG24AM125
+Course: Software Engineering (UE22CS351 / UE24CS351) - 5th Semester
+Repository: L6_L7_03_coffee_shop_order
+Lab: Lab 7 - Fuzzing for Input Validation Bugs
+
+COMMAND EXECUTED:
+pip install hypothesis pytest
+
+OUTPUT / ENVIRONMENT AUDIT:
+Requirement already satisfied: hypothesis in c:\users\manoj\appdata\local\programs\python\python313\lib\site-packages (6.170.15)
+Requirement already satisfied: pytest in c:\users\manoj\appdata\local\programs\python\python313\lib\site-packages (9.2.0)
+Requirement already satisfied: attrs>=22.2.0 in c:\users\manoj\appdata\local\programs\python\python313\lib\site-packages (from hypothesis) (25.1.0)
+Requirement already satisfied: sortedcontainers<3.0.0,>=2.1.0 in c:\users\manoj\appdata\local\programs\python\python313\lib\site-packages (from hypothesis) (2.4.0)
+Requirement already satisfied: iniconfig>=1.0.0 in c:\users\manoj\appdata\local\programs\python\python313\lib\site-packages (from pytest) (2.1.0)
+Requirement already satisfied: packaging in c:\users\manoj\appdata\local\programs\python\python313\lib\site-packages (from pytest) (24.2)
+Requirement already satisfied: pluggy<2,>=1.5 in c:\users\manoj\appdata\local\programs\python\python313\lib\site-packages (from pytest) (1.7.0)
+
+VERSION VERIFICATION COMMAND:
+python -c "import hypothesis, pytest; print('Hypothesis:', hypothesis.__version__, '| Pytest:', pytest.__version__)"
+
+VERSION VERIFICATION OUTPUT:
+Hypothesis: 6.170.15 | Pytest: 9.2.0
+
+STATUS: SUCCESS - All required packages are installed and active.
