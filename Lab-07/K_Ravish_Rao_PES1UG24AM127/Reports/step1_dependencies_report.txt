@@ -1,0 +1,28 @@
+================================================================================
+LAB 7 - STEP 1: DEPENDENCY INSTALLATION AND ENVIRONMENT VERIFICATION
+================================================================================
+Student Name: K Ravish Rao
+SRN: PES1UG24AM127
+Course: Software Engineering (UE22CS351 / UE24CS351) - 5th Semester
+Repository: L6_L7_05_blood_donation_screening
+Lab: Lab 7 - Fuzzing for Input Validation Bugs
+
+COMMAND EXECUTED:
+pip install hypothesis pytest coverage
+
+OUTPUT / ENVIRONMENT AUDIT:
+Requirement already satisfied: hypothesis in c:\python313\lib\site-packages (6.170.17)
+Requirement already satisfied: pytest in c:\python313\lib\site-packages (9.2.0)
+Requirement already satisfied: coverage in c:\python313\lib\site-packages (7.17.2)
+Requirement already satisfied: sortedcontainers<3.0.0,>=2.1.0 in c:\python313\lib\site-packages (from hypothesis) (2.4.0)
+Requirement already satisfied: iniconfig>=2 in c:\python313\lib\site-packages (from pytest) (2.3.1)
+Requirement already satisfied: packaging>=24 in c:\users\k ravish rao\appdata\roaming\python\python313\site-packages (from pytest) (26.0)
+Requirement already satisfied: pluggy<2,>=1.6 in c:\python313\lib\site-packages (from pytest) (1.7.0)
+
+VERSION VERIFICATION COMMAND:
+python -c "import hypothesis, pytest, coverage; print('Hypothesis:', hypothesis.__version__, '| Pytest:', pytest.__version__, '| Coverage:', coverage.__version__)"
+
+VERSION VERIFICATION OUTPUT:
+Hypothesis: 6.170.17 | Pytest: 9.2.0 | Coverage: 7.17.2
+
+STATUS: SUCCESS - All required fuzzing and testing dependencies verified.

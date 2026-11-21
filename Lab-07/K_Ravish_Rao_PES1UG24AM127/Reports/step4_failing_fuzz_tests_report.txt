@@ -1,0 +1,68 @@
+================================================================================
+LAB 7 - STEP 4: HYPOTHESIS FUZZ TEST FAILURES ON BUGGY APPLICATION
+================================================================================
+Student Name: K Ravish Rao
+SRN: PES1UG24AM127
+Module Under Test: processor.py (Starter Buggy Code)
+Test Suite: test_processor.py
+Command: pytest test_processor.py
+
+============================= test session starts =============================
+platform win32 -- Python 3.13.15, pytest-9.2.0, pluggy-1.7.0
+rootdir: C:\PES UNIVERSITY\Lab-07
+plugins: anyio-4.14.2, hypothesis-6.170.17, langsmith-0.14.15
+collected 3 items
+
+test_processor.py FFF                                                    [100%]
+
+================================== FAILURES ===================================
+______________________ test_validate_blood_type_no_crash ______________________
+  ExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  [Failure 1]
+    KeyError: '0'
+    AssertionError: validate_blood_type crashed with KeyError: '0'
+    Failing test case: test_validate_blood_type_no_crash(s='0')
+  [Failure 2]
+    IndexError: string index out of range
+    AssertionError: validate_blood_type crashed with IndexError: string index out of range
+    Failing test case: test_validate_blood_type_no_crash(s='')
+  [Failure 3]
+    AttributeError: 'NoneType' object has no attribute 'strip'
+    AssertionError: validate_blood_type crashed with AttributeError: 'NoneType' object has no attribute 'strip'
+    Failing test case: test_validate_blood_type_no_crash(s=None)
+
+_____________________ test_calculate_pulse_pressure_safe ______________________
+  ExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  [Failure 1]
+    ValueError: not enough values to unpack (expected 2, got 1)
+    AssertionError: calculate_pulse_pressure crashed with ValueError: not enough values to unpack
+    Failing test case: test_calculate_pulse_pressure_safe(s='0')
+  [Failure 2]
+    ZeroDivisionError: division by zero
+    AssertionError: calculate_pulse_pressure crashed with ZeroDivisionError: division by zero
+    Failing test case: test_calculate_pulse_pressure_safe(s='0/0')
+  [Failure 3]
+    AttributeError: 'NoneType' object has no attribute 'split'
+    AssertionError: calculate_pulse_pressure crashed with AttributeError: 'NoneType' object has no attribute 'split'
+    Failing test case: test_calculate_pulse_pressure_safe(s=None)
+
+_______________________ test_parse_donor_registry_safe ________________________
+  ExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  [Failure 1]
+    ValueError: could not convert string to float: ''
+    AssertionError: parse_donor_registry crashed with ValueError: could not convert string to float: ''
+    Failing test case: test_parse_donor_registry_safe(s='|')
+  [Failure 2]
+    IndexError: list index out of range
+    AssertionError: parse_donor_registry crashed with IndexError: list index out of range
+    Failing test case: test_parse_donor_registry_safe(s='')
+  [Failure 3]
+    AttributeError: 'NoneType' object has no attribute 'split'
+    AssertionError: parse_donor_registry crashed with AttributeError: 'NoneType' object has no attribute 'split'
+    Failing test case: test_parse_donor_registry_safe(s=None)
+
+=========================== short test summary info ===========================
+FAILED test_processor.py::test_validate_blood_type_no_crash - KeyError / IndexError / AttributeError
+FAILED test_processor.py::test_calculate_pulse_pressure_safe - ValueError / ZeroDivisionError / AttributeError
+FAILED test_processor.py::test_parse_donor_registry_safe - ValueError / IndexError / AttributeError
+============================== 3 failed in 10.52s ==============================

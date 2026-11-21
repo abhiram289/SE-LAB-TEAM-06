@@ -1,0 +1,40 @@
+================================================================================
+LAB 7 - STEP 5: HARDENED APPLICATION RUN & ROBUSTNESS VALIDATION
+================================================================================
+Student Name: K Ravish Rao
+SRN: PES1UG24AM127
+Module Under Test: processor.py (Defensively Hardened Code)
+Command: python processor.py
+
+TERMINAL EXECUTION LOG:
+PS C:\PES UNIVERSITY\Lab-07\team_repo\Lab-07\K_Ravish_Rao_PES1UG24AM127> python processor.py
+==== Running validate_blood_type ====
+Enter blood type (e.g. A+, O-, AB+): AB+
+Validated: AB Positive
+
+==== Running calculate_pulse_pressure ====
+Enter BP (e.g. 120/80): 120/80
+BP Metrics: Diff: 40, Ratio: 1.5
+
+==== Running parse_donor_registry ====
+Enter record (ID|Weight|Hemoglobin): D101|65.5|14.0
+Status: Donor D101: Eligible
+
+DEFENSIVE HARDENING MECHANISMS IMPLEMENTED:
+1. validate_blood_type:
+   - Type validation (isinstance(blood_code, str)) and strip() emptiness check -> returns None safely.
+   - Minimum length check (len(cleaned) >= 2) preventing string index out of range.
+   - Strict antigen membership check (antigen in {'A', 'B', 'AB', 'O'}) and Rh lookup -> returns None on invalid.
+
+2. calculate_pulse_pressure:
+   - Type and empty string validation -> returns None safely.
+   - Explicit split('/') token length verification (len(parts) == 2).
+   - try-except block wrapping integer parsing catching ValueError and TypeError.
+   - Positive range validation (systolic > 0 and diastolic > 0) eliminating ZeroDivisionError entirely.
+
+3. parse_donor_registry:
+   - Type and empty string validation -> returns None safely.
+   - Explicit split('|') token length verification (len(fields) == 3).
+   - Non-empty donor ID verification (donor_id non-blank).
+   - try-except block wrapping float conversions for weight and hemoglobin.
+   - Strict positive metric constraints (weight > 0 and hemoglobin > 0) before evaluating eligibility thresholds.

@@ -1,0 +1,40 @@
+================================================================================
+LAB 7 - STEP 2: BUGGY STARTER APPLICATION RUN & BASELINE ANALYSIS
+================================================================================
+Student Name: K Ravish Rao
+SRN: PES1UG24AM127
+Module Under Test: processor.py (Starter Buggy Implementation)
+Command: python processor.py
+
+TERMINAL EXECUTION LOG:
+PS C:\PES UNIVERSITY\Lab-07\assigned_repo\Lab 7> python processor.py
+==== Running validate_blood_type ====
+Enter blood type (e.g. A+, O-, AB+): A+
+Validated: A Positive
+
+==== Running calculate_pulse_pressure ====
+Enter BP (e.g. 120/80): 120/80
+BP Metrics: Diff: 40, Ratio: 1.5
+
+==== Running parse_donor_registry ====
+Enter record (ID|Weight|Hemoglobin): D101|65.5|14.0
+Status: Donor D101: Eligible
+
+VULNERABILITY & LATENT DEFECT AUDIT:
+1. validate_blood_type(blood_code):
+   - Direct string slicing cleaned[:-1] and cleaned[-1] raises IndexError on empty or whitespace strings.
+   - Assumes blood_code is non-null string: raises AttributeError ('NoneType' object has no attribute 'strip') when None.
+   - Direct dictionary lookup rh_map[rh_char] raises KeyError when the trailing character is not '+' or '-'.
+   - Lacks antigen domain validation: accepts malformed antigens (e.g. 'XYZ+') without error.
+
+2. calculate_pulse_pressure(bp_string):
+   - Unchecked split('/') tuple unpacking: raises ValueError when delimiter '/' is missing or occurs multiple times.
+   - Direct int() conversion: raises ValueError on non-numeric or blank strings (e.g., 'abc/80', '/').
+   - Zero Division Vulnerability: when diastolic == 0, systolic / diastolic raises ZeroDivisionError.
+   - Assumes bp_string is non-null string: raises AttributeError if None is provided.
+
+3. parse_donor_registry(donor_entry):
+   - Direct split('|') without checking length: raises IndexError if fewer than 3 tokens exist.
+   - Direct float() conversions: raise ValueError on empty or non-numeric tokens.
+   - Missing donor ID validation: accepts blank donor identifiers.
+   - Assumes donor_entry is non-null string: raises AttributeError when None is provided.

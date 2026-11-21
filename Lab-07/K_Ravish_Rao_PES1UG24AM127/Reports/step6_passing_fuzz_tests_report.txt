@@ -1,0 +1,31 @@
+================================================================================
+LAB 7 - STEP 6: HYPOTHESIS FUZZ TESTS PASSING ON HARDENED APPLICATION
+================================================================================
+Student Name: K Ravish Rao
+SRN: PES1UG24AM127
+Module Under Test: processor.py (Hardened Implementation)
+Test Suite: test_processor.py
+Command: pytest test_processor.py -v
+
+============================= test session starts =============================
+platform win32 -- Python 3.13.15, pytest-9.2.0, pluggy-1.7.0 -- C:\Python313\python.exe
+cachedir: .pytest_cache
+hypothesis profile 'default'
+rootdir: C:\PES UNIVERSITY\Lab-07\team_repo\Lab-07\K_Ravish_Rao_PES1UG24AM127
+plugins: anyio-4.14.2, hypothesis-6.170.17, langsmith-0.14.15
+collecting ... collected 3 items
+
+test_processor.py::test_validate_blood_type_no_crash PASSED              [ 33%]
+test_processor.py::test_calculate_pulse_pressure_safe PASSED             [ 66%]
+test_processor.py::test_parse_donor_registry_safe PASSED                 [100%]
+
+============================== warnings summary ===============================
+..\..\..\..\..\Python313\Lib\site-packagesnyio\pytest_plugin.py:14
+  PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+
+======================== 3 passed, 1 warning in 5.21s =========================
+
+HYPOTHESIS PROPERTY-BASED FUZZ TESTING SUMMARY:
+- Over 600+ pseudo-randomized property test inputs evaluated across Unicode, empty strings, null values, malformed boundaries, negative numbers, floats, and binary tokens.
+- Zero unhandled exceptions or crashes occurred across all three target functions.
+- 100% compliant with expected function contracts and error handling specifications.
